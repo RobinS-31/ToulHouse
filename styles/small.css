@@ -1,0 +1,183 @@
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .navMenu {
+    display: block;
+  }
+  .navMenu .navMenuBrand {
+    width: fit-content;
+    margin-right: unset;
+    margin-left: 2.5rem;
+  }
+  .navMenu .navMenuContent {
+    width: 100%;
+  }
+  .navMenu .navMenuContent .displayMenu {
+    height: 80px;
+    transition: height 0.5s;
+  }
+  .navMenu .navMenuContent .displayMenu_overflow {
+    overflow: visible !important;
+  }
+  .navMenu .navMenuContent .hideMenu {
+    height: 0;
+    transition: height 0.5s;
+  }
+  .navMenu .navMenuContent .navMenuContentList {
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 540px;
+  }
+
+  .intro {
+    margin-top: 2rem;
+  }
+
+  .sectionFilter {
+    flex-wrap: wrap;
+  }
+  .sectionFilter .order_1 {
+    order: 1;
+  }
+  .sectionFilter .order_2 {
+    order: 2;
+  }
+  .sectionFilter .order_3 {
+    order: 3;
+  }
+  .sectionFilter .order_4 {
+    order: 4;
+  }
+  .sectionFilter .order_5 {
+    order: 5;
+  }
+  .sectionFilter .order_6 {
+    order: 6;
+  }
+  .sectionFilter .sectionFilterItem {
+    width: calc(100% / 3);
+    margin: 0.25rem 0;
+    justify-content: center;
+  }
+  .sectionFilter .sectionFilterItem > select {
+    width: 106px;
+  }
+  .sectionFilter .sectionFilterItem > input {
+    width: 106px;
+  }
+  .sectionFilter .sectionFilterResetbutton {
+    margin: 0;
+    width: 150px;
+  }
+
+  .card_entity_img {
+    width: 100%;
+    height: 300px !important;
+  }
+
+  .card_body_title {
+    font-size: 1.2rem;
+  }
+
+  .card_body_favorite_content_message {
+    width: 300px;
+  }
+
+  .propertyDetailTopMain {
+    flex-direction: column;
+  }
+  .propertyDetailTopMain.Fullscreen .propertyDetailTopMainCarousel {
+    width: 100%;
+    height: 100%;
+  }
+  .propertyDetailTopMain.Fullscreen .propertyDetailTopMainCarousel .propertyDetailTopMainCarouselImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainCarousel {
+    height: 400px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainCarousel .propertyDetailTopMainShift {
+    width: 25px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 510px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainMiniItems {
+    display: flex;
+    width: 100%;
+    margin: 0 1rem;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainMiniItems > div {
+    padding: 0.25rem;
+    width: 160px;
+    min-width: 160px;
+    height: 120px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainScroll {
+    height: 100%;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainScroll > span {
+    width: 16px;
+    height: 20px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .top {
+    left: 0;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .bottom {
+    right: 0;
+  }
+
+  .propertyDetailBottomMain .propertyDetailBottomMainInformations ul {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .loginContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .loginContent .signin {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 0.0625rem solid #cacad9;
+    width: 80%;
+  }
+  .loginContent .signup {
+    width: 80%;
+  }
+  .loginContent .signup .signupTitle {
+    text-align: center;
+  }
+  .loginContent .signup div:first-child {
+    margin-bottom: 1.5rem;
+  }
+  .loginContent .signup .signupModalDialog {
+    max-width: 90%;
+  }
+
+  .profile_info_input {
+    flex-direction: column;
+  }
+  .profile_info_input .inputContainer {
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .profile_info_buttons {
+    margin-top: unset !important;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+  .footer > div {
+    margin: 1rem 2rem;
+  }
+}
+
+/*# sourceMappingURL=small.css.map */

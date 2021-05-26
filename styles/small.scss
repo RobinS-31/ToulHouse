@@ -1,0 +1,193 @@
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .navMenu {
+        display: block;
+
+        .navMenuBrand {
+            width: fit-content;
+            margin-right: unset;
+            margin-left: 2.5rem;
+        }
+        .navMenuContent {
+            width: 100%;
+
+            .displayMenu {
+                height: 80px;
+                transition: height 0.5s;
+            }
+            .displayMenu_overflow {
+                overflow: visible !important;
+            }
+            .hideMenu {
+                height: 0;
+                transition: height 0.5s;
+            }
+            .navMenuContentList {
+                flex-direction: column;
+                align-items: flex-start;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .container {
+        max-width: 540px;
+    }
+
+    .intro {
+        margin-top: 2rem;
+    }
+
+    .sectionFilter {
+        flex-wrap: wrap;
+
+        .order_1 {
+            order: 1;
+        }
+        .order_2 {
+            order: 2;
+        }
+        .order_3 {
+            order: 3;
+        }
+        .order_4 {
+            order: 4
+        }
+        .order_5 {
+            order: 5;
+        }
+        .order_6 {
+            order: 6;
+        }
+        .sectionFilterItem {
+            width: calc(100% / 3);
+            margin: .25rem 0;
+            justify-content: center;
+
+            > select {
+                width: 106px;
+            }
+            > input {
+                width: 106px;
+            }
+        }
+        .sectionFilterResetbutton {
+            margin: 0;
+            width: 150px;
+        }
+    }
+
+    .card_entity_img {
+        width: 100%;
+        height: 300px !important;
+    }
+    .card_body_title {
+        font-size: 1.2rem;
+    }
+    .card_body_favorite_content_message {
+        width: 300px;
+    }
+
+    .propertyDetailTopMain {
+        flex-direction: column;
+
+        &.Fullscreen {
+            .propertyDetailTopMainCarousel {
+                width: 100%;
+                height: 100%;
+
+                .propertyDetailTopMainCarouselImgContainer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        .propertyDetailTopMainCarousel {
+            height: 400px;
+
+            .propertyDetailTopMainShift {
+                width: 25px;
+            }
+        }
+        .propertyDetailTopMainMini {
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 510px;
+
+            .propertyDetailTopMainMiniItems {
+                display: flex;
+                width: 100%;
+                margin: 0 1rem;
+
+                > div {
+                    padding: .25rem;
+                    width: 160px;
+                    min-width: 160px;
+                    height: 120px;
+                }
+            }
+            .propertyDetailTopMainScroll {
+                height: 100%;
+
+                > span {
+                    width: 16px;
+                    height: 20px;
+                }
+            }
+            .top {
+                left: 0;
+            }
+            .bottom {
+                right: 0;
+            }
+        }
+    }
+    .propertyDetailBottomMain .propertyDetailBottomMainInformations ul {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .loginContent {
+        flex-direction: column;
+        align-items: center;
+
+        .signin {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: .0625rem solid #cacad9;
+            width: 80%;
+        }
+        .signup {
+            width: 80%;
+
+            .signupTitle {
+                text-align: center;
+            }
+            div:first-child {
+                margin-bottom: 1.5rem;
+            }
+            .signupModalDialog {
+                max-width: 90%;
+            }
+        }
+    }
+
+    .profile_info_input {
+        flex-direction: column;
+
+        .inputContainer {
+            margin: 0 auto 1.5rem auto;
+        }
+    }
+    .profile_info_buttons {
+        margin-top: unset !important;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        > div {
+            margin: 1rem 2rem;
+        }
+    }
+}

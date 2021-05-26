@@ -1,0 +1,106 @@
+@media screen and (min-width: 1200px) {
+  .navMenu .navMenuContent .navMenuContentList li {
+    display: initial;
+  }
+  .navMenu .navMenuButton {
+    display: none;
+  }
+
+  .container {
+    max-width: 1140px;
+  }
+
+  .intro {
+    margin: 4rem 0;
+  }
+
+  .sectionFilter {
+    justify-content: center;
+  }
+  .sectionFilter .sectionFilterItem {
+    margin: 0 0.25rem;
+    justify-content: center;
+  }
+  .sectionFilter .sectionFilterItem > select {
+    width: 106px;
+  }
+  .sectionFilter .sectionFilterItem > input {
+    width: 80px;
+  }
+
+  .card {
+    max-width: calc(100% / 3);
+    flex-basis: calc(100% / 3);
+  }
+  .card .card_body_favorite_content_message {
+    width: 300px;
+  }
+
+  .propertyDetailTopMain {
+    justify-content: space-between;
+    height: 600px;
+  }
+  .propertyDetailTopMain.Fullscreen .propertyDetailTopMainCarousel {
+    width: calc(100% - 220px);
+    height: 100%;
+  }
+  .propertyDetailTopMain.Fullscreen .propertyDetailTopMainCarousel .propertyDetailTopMainCarouselImgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainCarousel {
+    width: 840px;
+    height: 100%;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainCarousel .propertyDetailTopMainShift {
+    width: 30px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini {
+    width: 220px;
+    flex-direction: column;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainMiniItems {
+    margin: 1rem 0;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainMiniItems > div {
+    margin: 0 auto;
+    padding: 0.25rem 0;
+    width: 200px;
+    height: 150px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainScroll {
+    width: 100%;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .propertyDetailTopMainScroll > span {
+    transform: rotate(90deg);
+    width: 20px;
+    height: 16px;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .top {
+    top: 0;
+  }
+  .propertyDetailTopMain .propertyDetailTopMainMini .bottom {
+    bottom: 0;
+  }
+
+  .loginContent {
+    justify-content: space-between;
+  }
+  .loginContent .signin {
+    width: 60%;
+    border-right: 0.0625rem solid #cacad9;
+  }
+  .loginContent .signup {
+    width: 35%;
+  }
+  .loginContent .signup .signupModalDialog {
+    width: 500px;
+  }
+
+  .profile_info_input {
+    width: 800px;
+  }
+}
+
+/*# sourceMappingURL=extraLarge.css.map */
