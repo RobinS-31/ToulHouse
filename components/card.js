@@ -39,7 +39,7 @@ const Card = ({ property, propertyCategory, mutate }) => {
      */
     const handleLikeButton = async () => {
         if (session && !loading) {
-            if (emptyHeartIcon.current.classList.contains("show")) {
+            if (!favorites.includes(property._id)) {
                 favorites.push(property._id);
                 const response = await api.put(
                     '/api/manageUser',

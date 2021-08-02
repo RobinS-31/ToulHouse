@@ -4,6 +4,9 @@ import { signIn, useSession } from 'next-auth/client';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faAt } from "@fortawesome/free-solid-svg-icons";
 
+// == Import : local
+import { emailRegEx } from "../utils/regEX";
+
 
 /**
  * Gère l'affichage de la page de connexion.
@@ -15,6 +18,7 @@ const Login = () => {
     const [isModal, setIsModal] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isSessionError, setIsSessionError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [session, loading] = useSession();
 
     useEffect(() => {
@@ -73,16 +77,24 @@ const Login = () => {
      */
     const handleSubmitLoginForm = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
-        const signinPromise = await signIn('email', { email, redirect: false, callbackUrl: "/" });
 
-        if (signinPromise.status === 200) {
-            setIsModal(true);
-            setIsLoading(false);
+        if (emailRegEx.test(email)) {
+            setIsLoading(true);
+            const signinPromise = await signIn('email', { email, redirect: false, callbackUrl: "/" });
+
+            if (signinPromise.status === 200) {
+                setIsModal(true);
+                setIsLoading(false);
+            } else {
+                setErrorMessage('Veuillez éssayer à nouveau de vous connecter. Si l\'érreur persiste contactez un administrateur via le lien "Nous contacter" qui se trouve en bas de page.');
+                setIsModal(true);
+                setIsSessionError(true);
+                setIsLoading(false);
+            }
         } else {
+            setErrorMessage(`L'adresse email ${email} n'est pas valide`);
             setIsModal(true);
             setIsSessionError(true);
-            setIsLoading(false);
         }
     };
 
@@ -154,14 +166,14 @@ const Login = () => {
                                 <h4 className="signupModalDialogContentTitle">
                                     {
                                         isSessionError
-                                            ? 'Une érreur est survenue'
+                                            ? 'Une erreur est survenue'
                                             : 'Vérifiez votre boite de réception'
                                     }
                                 </h4>
                                 <p className="signupModalDialogContentText">
                                     {
                                         isSessionError
-                                            ? 'Veuillez éssayer à nouveau de vous connecter. Si l\'érreur persiste contactez un administrateur via le lien "Nous contacter" qui se trouve en bas de page.'
+                                            ? errorMessage
                                             : `Un lien pour valider votre connexion vous a été envoyé à l'adresse : ${email}`
                                     }
                                 </p>

@@ -136,6 +136,48 @@
         }
     }
 
+    .handlePropertyCard {
+        .handlePropertyCard_form_body {
+            flex-direction: column;
+
+            .handlePropertyCard_form_body_imgList {
+                width: 100% !important;
+                padding-right: 0 !important;
+                justify-content: center;
+                padding-bottom: .5rem;
+
+                .handlePropertyCard_form_body_imgList_item {
+                    width: unset !important;
+                    max-width: 100%;
+                }
+            }
+            .handlePropertyCard_form_body_content {
+                width: 100% !important;
+                justify-content: center !important;
+                border-left: unset !important;
+
+                .handlePropertyCard_form_body_content_select, .handlePropertyCard_form_body_content_input, .handlePropertyCard_form_body_content_list {
+                    width: 100% !important;
+
+                    > input {
+                        width: 100% !important;
+                    }
+                    .handlePropertyCard_form_body_content_list_addButton {
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+        .handlePropertyCard_form_buttons {
+            flex-direction: column-reverse;
+
+            > button {
+                margin-right: unset !important;
+                margin-bottom: .5rem;
+            }
+        }
+    }
+
     .profile_info_input {
         flex-wrap: wrap;
 

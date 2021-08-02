@@ -14,7 +14,7 @@ const dbConnect = async () => {
             useUnifiedTopology: true,
             useFindAndModify: false
         });
-        connection.isConnected = db.connections[0].readyState;
+        connection.isConnected = db.connections[0].readyState; // 0 ou 1
         console.log('Connexion à MongoDB Réussie !');
     } catch (error) {
         console.log('Connexion à MongoDB échouée !', error);

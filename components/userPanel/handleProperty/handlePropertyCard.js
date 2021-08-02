@@ -539,7 +539,7 @@ const HandlePropertyCard = ({ property, category, newProperty = false, reFetch }
                         <button
                             className='handlePropertyCard_form_buttons_removeButton'
                             type='button'
-                            //onClick={handleOnClickRemovePropertyButton}
+                            onClick={handleOnClickRemovePropertyButton}
                         >
                             Supprimer
                         </button>
@@ -556,7 +556,7 @@ const HandlePropertyCard = ({ property, category, newProperty = false, reFetch }
                         className='handlePropertyCard_form_buttons_saveButton'
                         type='submit'
                         disabled={disabledInput}
-                        //onClick={handleOnSubmitForm}
+                        onClick={handleOnSubmitForm}
                     >
                         Enregistrer
                     </button>

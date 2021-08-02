@@ -15,7 +15,7 @@ import Card from './card';
 const HomeSection = ({ properties, sectionName }) => {
 
     const [selectedType, setSelectedType] = useState(0);
-    const propertiesCategory= sectionName === "Appartements" ? "apartments" : "houses";
+    const propertiesCategory = sectionName === "Appartements" ? "apartments" : "houses";
 
     return (
         <section className='section'>

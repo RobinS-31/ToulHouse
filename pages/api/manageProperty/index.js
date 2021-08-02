@@ -4,7 +4,6 @@ import { getSession } from 'next-auth/client';
 
 // == Import : local
 import dbConnect from '../../../utils/dbConnect';
-import corsMiddleware from "../../../middlewares/cors";
 import handleImage from "../../../middlewares/handleImage";
 import Apartment from '../../../models/Apartment';
 import House from '../../../models/House';
@@ -12,7 +11,6 @@ import House from '../../../models/House';
 
 export default async (req, res) => {
     try {
-        await corsMiddleware(req, res);
         const session = await getSession({ req });
 
         if (session.user.admin) {

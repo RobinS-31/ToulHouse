@@ -43,7 +43,7 @@ export const getStaticProps = async () => {
             appartmentsRandomExcerpt,
             housesRandomExcerpt
         },
-        revalidate: 30
+        revalidate: 120
     };
 };
 
@@ -63,7 +63,7 @@ const Home = ({ appartmentsRandomExcerpt, housesRandomExcerpt }) => {
             </Head>
             <Layout>
                 <main className="container">
-                    <Intro/>
+                    <Intro />
                     <HomeSection properties={appartmentsRandomExcerpt} sectionName={"Appartements"}/>
                     <HomeSection properties={housesRandomExcerpt} sectionName={"Maisons"}/>
                 </main>

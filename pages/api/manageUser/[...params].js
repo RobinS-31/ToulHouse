@@ -2,14 +2,12 @@ import { getSession } from 'next-auth/client'
 
 // == Import : local
 import dbConnect from '../../../utils/dbConnect';
-import corsMiddleware from "../../../middlewares/cors";
 import House from '../../../models/House';
 import Apartment from '../../../models/Apartment';
 
 
 const handler = async (req, res) => {
     try {
-        await corsMiddleware(req, res);
         const session = await getSession({ req })
 
         if (session) {

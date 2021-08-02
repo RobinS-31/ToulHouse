@@ -40,22 +40,14 @@ const PropertyDetail = ({ property }) => {
     const imageMiniActive = useRef(null); // Fait référence à l'index de l'image miniature "active" (celle affiché dans le carousel).
     const descriptionHeight = useRef(null); // Fait référence à la hauteur du paragraphe contenant la description.
     const fullElToSwitchToFullscreen = useRef(null); // Fait référence a la section "propertyDetailTopMain" (carousel + galerie).
-    const oneElToSwitchToFullscreen = useRef(null); // Fait référence a la class "propertyDetailTopMainCarousel" (caroussel) de la section "propertyDetailTopMain".
+    const oneElToSwitchToFullscreen = useRef(null); // Fait référence a la section "propertyDetailTopMainCarousel" (caroussel) de la section "propertyDetailTopMain".
     const carouselImgContainer = useRef(null); // Fait référence à la class "propertyDetailTopMainCarouselImgContainer" (div qui contient les images) de la section "propertyDetailTopMain".
 
     useEffect(() => {
         /* Défini la hauteur du paragraphe contenant la description afin d'adapter la hauteur de la div contennant le paragraphe si l'utilisateur souhaite l'afficher entièrement. */
         setDescriptionTextHeight(descriptionHeight.current.clientHeight);
 
-        /*
-        * Si la hauteur ou la largeur totale du contenu (images miniatures) est plus importante que ce qui peut être affiché sur la vue de l'utilisateur alors on passe "displayButtonScrollMiniatureContainer" sur true,
-        * ce qui affichera des "flèches" indiquant que l'on peut scroller et permetant de la faire en cliquant dessus.
-        */
-        if (contentScroll.current.scrollHeight > contentScroll.current.clientHeight || contentScroll.current.scrollWidth > contentScroll.current.clientWidth) {
-            setDisplayButtonScrollMiniatureContainer(true)
-        } else {
-            setDisplayButtonScrollMiniatureContainer(false)
-        }
+        handleDisplayButtonScrollMiniatureContainer();
 
         /*
         * Si l'utlisateur reviens en arrière via le bouton retour, on passe "fromHistoryBack" sur true.
@@ -83,16 +75,24 @@ const PropertyDetail = ({ property }) => {
             setDescriptionTextHeight(descriptionHeight.current.clientHeight);
         };
 
+        document.onfullscreenchange = (event) => {
+            if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+                setIsFullscreen(false);
+                handleDisplayButtonScrollMiniatureContainer();
+            }
+        }
+
         return () => {
             window.onpopstate = null;
             window.onresize = null;
+            document.onfullscreenchange = null;
         };
     }, []);
 
     useEffect(() => {
         /*
         * Si "letScroll" est true alors on indique à la barre de défilement de correspondre à la position indiqué par "scrollbarPosition".
-        * Cette action fait suite à un changement d'image dans le carousel, de sorte à ce que la miniature représenter comme active (celle qui correspond donc à l'image afficher dans le carousel)
+        * Cette action fait suite à un changement d'image dans le carousel, de sorte à ce que la miniature représenté comme active (celle qui correspond donc à l'image affiché dans le carousel)
         * soit visible dans le container affichant les miniatures.
         */
         if (letsScroll) {
@@ -163,30 +163,37 @@ const PropertyDetail = ({ property }) => {
     };
 
     /**
+     * Gère l'affichage des boutons permettant de naviguer dans le container des images miniatures.
+     */
+    const handleDisplayButtonScrollMiniatureContainer = () => {
+        /*
+        * Si la hauteur ou la largeur totale du contenu (images miniatures) est plus importante que ce qui peut être affiché sur la vue de l'utilisateur alors on passe "displayButtonScrollMiniatureContainer" sur true,
+        * ce qui affichera des "flèches" indiquant que l'on peut scroller et permetant de la faire en cliquant dessus.
+        */
+        if (contentScroll.current.scrollHeight > contentScroll.current.clientHeight || contentScroll.current.scrollWidth > contentScroll.current.clientWidth) {
+            setDisplayButtonScrollMiniatureContainer(true)
+        } else {
+            setDisplayButtonScrollMiniatureContainer(false)
+        }
+    };
+
+    /**
      * Gère le passage en plein écran.
      */
     const handleToggleFullscreen = () => {
         const elToSwitchToFullscreen = screen.width >= 1200 ? fullElToSwitchToFullscreen : oneElToSwitchToFullscreen;
 
         if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
-            setIsFullscreen(true);
             elToSwitchToFullscreen.current.requestFullscreen()
                 .then(res => {
-                    if (contentScroll.current.scrollHeight > contentScroll.current.clientHeight || contentScroll.current.scrollWidth > contentScroll.current.clientWidth) {
-                        setDisplayButtonScrollMiniatureContainer(true)
-                    } else {
-                        setDisplayButtonScrollMiniatureContainer(false)
-                    }
+                    setIsFullscreen(true);
+                    handleDisplayButtonScrollMiniatureContainer();
                 })
         } else {
-            setIsFullscreen(false);
             document.exitFullscreen()
                 .then(res => {
-                    if (contentScroll.current.scrollHeight > contentScroll.current.clientHeight || contentScroll.current.scrollWidth > contentScroll.current.clientWidth) {
-                        setDisplayButtonScrollMiniatureContainer(true)
-                    } else {
-                        setDisplayButtonScrollMiniatureContainer(false)
-                    }
+                    setIsFullscreen(false);
+                    handleDisplayButtonScrollMiniatureContainer();
                 })
         }
     };

@@ -4,11 +4,9 @@ import { getSession } from 'next-auth/client';
 // == Import : local
 import dbConnect from '../../../utils/dbConnect';
 import User from "../../../models/User";
-import corsMiddleware from "../../../middlewares/cors";
 
 export default async (req, res) => {
     try {
-        await corsMiddleware(req, res);
         const session = await getSession({ req });
 
         if (session) {
@@ -17,8 +15,6 @@ export default async (req, res) => {
 
             switch (method) {
                 case 'PUT':
-                    console.log("body :", body);
-
                     const updateUser = await User.findByIdAndUpdate(
                         session.user._id,
                         {

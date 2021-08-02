@@ -28,7 +28,7 @@ const Properties = ({ params }) => {
 
     const getKey = (pageIndex, previousPageData) => {
         if (previousPageData && !previousPageData.length) return null;
-        return `/api/${propertiesCategory}/0/LIST/${propertiesType}/${pageIndex}/${sortBy}/${pcsNbr ? pcsNbr : '0'}/${priceMin ? priceMin : '0'}/${priceMax ? priceMax : '999999999'}/${surface ? surface : '0'}`                    // SWR key
+        return `/api/${propertiesCategory}/${propertiesType}/${pageIndex}/${sortBy}/${pcsNbr ? pcsNbr : '0'}/${priceMin ? priceMin : '0'}/${priceMax ? priceMax : '999999999'}/${surface ? surface : '0'}`;
     }
     const { data, error, isValidating, mutate, size, setSize } = useSWRInfinite(getKey, fetcher);
 

@@ -14,7 +14,7 @@ const UserPanel = ({ user }) => {
     return (
         <div className='userPanel'>
             <div className='userPanel_menu'>
-                <h2 className='userPanel_menu_title'>Mon Compte</h2>
+                <h2 className='userPanel_menu_title'>{!user.admin ? "Mon Compte" : "Gestion des annonces"}</h2>
             </div>
             <div className='userPanel_content'>
                 {!user.admin && <Profile user={user} />}

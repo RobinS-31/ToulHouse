@@ -37,6 +37,11 @@ const PropertiesList = ({ params, setSize, size, propertiesList }) => {
         screen.width >= 992 ? setDisplayFilter(true) : null;
         screen.width < 992 ? setDisplayButtonShowFilter(true) : null;
 
+        window.onresize = (event) => {
+            screen.width >= 992 ? setDisplayFilter(true) : setDisplayFilter(false);
+            screen.width < 992 ? setDisplayButtonShowFilter(true) : setDisplayButtonShowFilter(false);
+        };
+
         window.onscroll = (event) => {
             if (window.scrollY !== 0) {
                 dispatchPropertiesFilterState({
@@ -47,6 +52,7 @@ const PropertiesList = ({ params, setSize, size, propertiesList }) => {
             }
         };
         return () => {
+            window.onresize = null;
             window.onscroll = null;
         };
     }, []);

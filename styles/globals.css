@@ -743,11 +743,7 @@ strong {
   background-color: black;
 }
 .propertyDetail .propertyDetailTopMain .propertyDetailTopMainCarousel .propertyDetailTopMainShift > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 22px;
+  height: 19px;
 }
 .propertyDetail .propertyDetailTopMain .propertyDetailTopMainCarousel .propertyDetailTopMainShift > span > svg {
   width: 10px;

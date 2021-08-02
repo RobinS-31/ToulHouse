@@ -1,9 +1,9 @@
 module.exports = {
     env: {
-        MONGO_URI:,
-        API_IMMO_APP:,
-        EMAIL_FROM:,
-        EMAIL_SERVER:
+        MONGO_URI: "",
+        NEXTAUTH_URL: "",
+        EMAIL_FROM: "",
+        EMAIL_SERVER: ""
     },
     async rewrites() {
         return [
