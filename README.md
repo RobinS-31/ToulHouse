@@ -1,30 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## ToulHouse
+https://toulhouse.herokuapp.com
 
-## Getting Started
+Site web d'une agence immobilière fictive spécialisée sur la ville de Toulouse.
+Le site propose des logements à la vente ou à la location (appartements ou maisons).
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Informations
+* La page d’accueil et la page de détails des annonces sont en "Static Generation" avec revalidation des données.
+* La page de recherche est en "Server-Side Rendering" avec récupération des données côté client via SWR.
+* Je n'ai pas utilisé de framework CSS mais je me suis inspiré des créations qu'ils proposent.
+* Pour le carrousel présent sur le détail des annonces je n'ai pas utilisé de modules, j'ai préféré le faire moi même.
+* Pour la partie authentification j'ai utilisé NextAuth. La connexion se fait en passwordless via email.
+* La page "Mon Compte" permet de modifier ses informations et de gérer ses favoris.
