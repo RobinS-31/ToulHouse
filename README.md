@@ -1,6 +1,4 @@
 ## ToulHouse
-https://toulhouse.herokuapp.com
-
 Site web d'une agence immobilière fictive spécialisée sur la ville de Toulouse.
 Le site propose des logements à la vente ou à la location (appartements ou maisons).
 
